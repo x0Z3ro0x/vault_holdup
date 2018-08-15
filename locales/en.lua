@@ -1,0 +1,16 @@
+Locales['en'] = {
+	['shop_robbery'] = 'shop Robbery',
+	['press_to_rob'] = 'press ~INPUT_CONTEXT~ to ~o~rob~s~ ~b~%s~s~',
+	['robbery_timer'] = 'Vault Robbery: ~r~%s~s~ seconds remaning',
+	['recently_robbed'] = 'this Vault was recently robbed. Please wait ~y~%s~s~ seconds until you can rob it again!',
+	['rob_in_prog'] = '~r~Vault Robbery ~w~in progress at ~b~%s~s~',
+	['started_to_rob'] = 'You begin attempting to break into the Vault at ~y~%s~s~',
+	['alarm_triggered'] = 'Dammit man you triggered the alarm!! Get out fast or get ready for a ~r~fire fight~w~!',
+	['robbery_complete'] = '~r~The robbery was successful~s~, you ~o~stole~s~ ~g~$%s~s~',
+	['robbery_complete_at'] = '~r~Vault Robbery ~w~successful at ~y~%s~s~.',
+	['robbery_cancelled'] = 'the robbery has been cancelled!',
+	['robbery_cancelled_at'] = '~r~The attempted robbery at ~b~%s~s~ has been cancelled!',
+	['min_police'] = 'there must be at least ~b~%s cops~s~ in town to rob.',
+	['robbery_already'] = '~r~A robbery is already in progress.',
+	['no_threat'] = 'you do not pose a threat to the business',
+}
