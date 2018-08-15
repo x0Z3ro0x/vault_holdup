@@ -1,4 +1,4 @@
-# Teller Robberies
+# Vault Robberies
 A script for robbing the vaults on your server.
 
 ### Dependencies
