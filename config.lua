@@ -20,7 +20,7 @@ Stores = {
 		lastrobbed = 0
   },
   ["fleeca"] = {
-    position = { ['x'] = 146.9768, ['y'] = -1045.4152, ['z'] = 28.3681 },
+    position = { ['x'] = 146.9768, ['y'] = -1045.4152, ['z'] = 29.3681 },
     reward = math.random(50000,75000),
     nameofstore = "Fleeca Downtown Bank",
     secondsRemaining = math.random(900,1500),
