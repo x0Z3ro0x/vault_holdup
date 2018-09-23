@@ -11,8 +11,8 @@ AddEventHandler('vault_holdup:toofar', function(robb)
 	rob = false
 	for i=1, #xPlayers, 1 do
 		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-		
-		if xPlayer.job.name == 'police' then
+
+		if xPlayer.job.name == 'police' or xPlayer.job.name == 'spolice' or xPlayer.job.name == 'sheriff' then
 			TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_cancelled_at', Stores[robb].nameofstore))
 			TriggerClientEvent('vault_holdup:killblip', xPlayers[i])
 		end
@@ -41,7 +41,7 @@ AddEventHandler('vault_holdup:rob', function(robb)
 		local cops = 0
 		for i=1, #xPlayers, 1 do
 			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-			if xPlayer.job.name == 'police' then
+			if xPlayer.job.name == 'police' or xPlayer.job.name == 'spolice' or xPlayer.job.name == 'sheriff' then
 				cops = cops + 1
 			end
 		end
@@ -51,7 +51,7 @@ AddEventHandler('vault_holdup:rob', function(robb)
 				rob = true
 				for i=1, #xPlayers, 1 do
 					local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-					if xPlayer.job.name == 'police' then
+					if xPlayer.job.name == 'police' or xPlayer.job.name == 'spolice' or xPlayer.job.name == 'sheriff' then
 						TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog', store.nameofstore))
 						TriggerClientEvent('vault_holdup:setblip', xPlayers[i], Stores[robb].position)
 					end
@@ -59,10 +59,10 @@ AddEventHandler('vault_holdup:rob', function(robb)
 
 				TriggerClientEvent('esx:showNotification', _source, _U('started_to_rob', store.nameofstore))
 				TriggerClientEvent('esx:showNotification', _source, _U('alarm_triggered'))
-				
+
 				TriggerClientEvent('vault_holdup:currentlyrobbing', _source, robb)
 				TriggerClientEvent('vault_holdup:starttimer', _source)
-				
+
 				Stores[robb].lastrobbed = os.time()
 				robbers[_source] = robb
 				local savedSource = _source
@@ -74,11 +74,11 @@ AddEventHandler('vault_holdup:rob', function(robb)
 							local award = store.reward
 							TriggerClientEvent('vault_holdup:robberycomplete', savedSource, award)
 							xPlayer.addAccountMoney('black_money', award)
-							
+
 							local xPlayers = ESX.GetPlayers()
 							for i=1, #xPlayers, 1 do
 								local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-								if xPlayer.job.name == 'police' then
+								if xPlayer.job.name == 'police' xPlayer.job.name == 'spolice' or xPlayer.job.name == 'sheriff' then
 									TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_complete_at', store.nameofstore))
 									TriggerClientEvent('vault_holdup:killblip', xPlayers[i])
 								end
